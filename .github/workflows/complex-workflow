@@ -1,0 +1,35 @@
+name: complex-workflow
+
+on: 
+    push:
+        branches:
+            - develop
+            - master
+
+jobs:
+    job1:
+        name: First Job
+        runs-on: ubuntu-latest
+        steps:
+            - name: print date from ubuntu
+              run: date
+
+    job2:
+        name: Second Job
+        runs-on: windows-latest
+        steps:
+            - name: print date from windows
+              run: "Get-Date"
+    job3:
+        name: third Job
+        runs-on: macos-latest
+        steps:
+            - name: print date from MacOS
+              run: date          
+    job4:
+        name: fourth Job
+        runs-on: windows-latest
+        needs: [job1, job2, job3]
+        steps:
+            - name: Print final date
+              run: "Get-Date"
