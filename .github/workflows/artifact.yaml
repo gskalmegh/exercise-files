@@ -75,4 +75,4 @@ jobs:
     - name: list directories
       run: dir
     - name: Test ${{ env.FILE_NAME }}
-      run: ${{ env.FILE_NAME }}/${{ env.FILE_NAME }}.exe
+      run: ${{ env.FILE_NAME }}.exe
