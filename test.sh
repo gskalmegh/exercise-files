@@ -1,5 +1,6 @@
 chmod +x ./hello-server
-
+echo "let us see what is in hello-server"
+ls ./hello-server/
 ./hello-server &
 
 sleep 3
