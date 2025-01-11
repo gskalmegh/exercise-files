@@ -72,6 +72,7 @@ jobs:
       uses: actions/download-artifact@v4.1.8
       with:
         name: windows
-        
+    - name: list directories
+      run: dir
     - name: Test ${{ env.FILE_NAME }}
       run: ${{ env.FILE_NAME }}/${{ env.FILE_NAME }}.exe
