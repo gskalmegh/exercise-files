@@ -40,11 +40,14 @@ jobs:
 
     - name: Check out code
       uses: actions/checkout@v1
+    - name: List files
+      run: ls -lart
 
     - name: Download artifact
       uses: actions/download-artifact@v4.1.8
       with:
         name: linux
+        path: ./${{ env.FILE_NAME }}
 
     - name: Test ${{ env.FILE_NAME }}
       run: source ./test.sh
