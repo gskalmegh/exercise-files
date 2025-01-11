@@ -50,9 +50,10 @@ jobs:
       with:
         name: linux
         path: ./${{ env.FILE_NAME }}
-    - name: List files
+    - name: List files After
       run: |
         ls -lart
+        ls./${{ env.FILE_NAME }}
         pwd
         
     - name: Test ${{ env.FILE_NAME }}.go
