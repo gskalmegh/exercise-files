@@ -40,7 +40,7 @@ jobs:
 
     - name: Check out code
       uses: actions/checkout@v1
-    - name: List files
+    - name: List files before
       run: |
         ls -lart
         pwd
@@ -49,8 +49,12 @@ jobs:
       uses: actions/download-artifact@v4.1.8
       with:
         name: linux
-        path: ./${{ env.FILE_NAME }}.go
-
+        path: ./${{ env.FILE_NAME }}
+    - name: List files
+      run: |
+        ls -lart
+        pwd
+        
     - name: Test ${{ env.FILE_NAME }}.go
       run: source ./test.sh
 
