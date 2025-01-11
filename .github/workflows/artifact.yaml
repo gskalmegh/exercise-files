@@ -53,7 +53,7 @@ jobs:
     - name: List files After
       run: |
         ls -lart
-        ls./${{ env.FILE_NAME }}
+        ls ./${{ env.FILE_NAME }}
         pwd
         
     - name: Test ${{ env.FILE_NAME }}.go
