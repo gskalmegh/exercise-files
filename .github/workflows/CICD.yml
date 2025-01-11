@@ -1,4 +1,4 @@
-name: hello
+name: cicd
 
 on: [push]
 
@@ -15,5 +15,5 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
-    - name: Ghanshyams custom script
-        echo perform security check
+    - name: Run a sonar scan
+      run: echo Hello, Sonar world!
