@@ -42,16 +42,19 @@ on:
         required: false
 
 jobs:
-  automerge:
+  merge:
+    #if: github.actor == 'automate6500' || github.actor == 'octocat'
+    #needs: [link]
     runs-on: ubuntu-latest
     steps:
-      - uses: reitermarkus/automerge@v2
-        with:
-          token: ${{ secrets.MY_GITHUB_TOKEN }}
-          merge-method: rebase
-          do-not-merge-labels: never-merge
-          #required-labels: automerge
-          pull-request: ${{ github.event.inputs.pull-request }}
-          review: ${{ github.event.inputs.review }}
-          dry-run: true
+    
+    - uses: actions/checkout@v1
+    
+    - uses: hmarr/auto-approve-action@v2.0.0
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - uses: managedkaos/merge-pull-request@v1.2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
