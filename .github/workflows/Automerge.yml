@@ -5,7 +5,7 @@ on:
   # (Only recommended for testing.)
   #push:
 
-  # Try enabling auto-merge for all open pull requests.
+  # Try enabling auto-merge for all open pull requests
   schedule:
     - cron: 0 * * * *
 
