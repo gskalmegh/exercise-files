@@ -7,7 +7,7 @@
 - In a terminal, run the following commands to initialize the directory as a git repository.
 
         git init
-        git add .
+        git add . 
         git commit -m 'first check in'
 
 - Now add the new repository you created as a remote for the local repo.
