@@ -6,7 +6,9 @@ on:
       - main
   pull_request:
     types: [closed]
-
+permissions:  # ✅ Add this block to grant write access
+  contents: write
+  pull-requests: read
 jobs:
   update_release_draft:
     runs-on: ubuntu-latest
@@ -14,9 +16,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Draft Release Notes
+      - name: Publish Release
         uses: release-drafter/release-drafter@v5
         with:
-          config-name: release-drafter.yml
+          publish: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
