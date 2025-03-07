@@ -14,9 +14,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Draft Release Notes
+      - name: Publish Release
         uses: release-drafter/release-drafter@v5
         with:
-          config-name: release-drafter.yml
+          publish: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
