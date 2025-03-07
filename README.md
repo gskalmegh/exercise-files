@@ -10,6 +10,7 @@
         git add . 
         git commit -m 'first check in'
 
+
 - Now add the new repository you created as a remote for the local repo.
 
         git remote add origin git@github.com:YOUR_GITHUB_USER_NAME_HERE/exercise-files.git
