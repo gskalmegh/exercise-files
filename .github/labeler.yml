@@ -1,7 +1,6 @@
 backend:
   - src/main/**
   - src/**/*.java
-  - **/**
 
 frontend:
   - src/frontend/**
