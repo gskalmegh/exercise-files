@@ -21,4 +21,6 @@ jobs:
         with:
           publish: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }
+      - name: Adding markdown
+        run: echo ‘### Hello world! :rocket:’ >> $GITHUB_STEP_SUMMARY
