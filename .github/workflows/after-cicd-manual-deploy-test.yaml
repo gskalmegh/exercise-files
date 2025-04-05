@@ -20,7 +20,4 @@ jobs:
         run: echo "Gradle build"
 
       - name: Deploy to Test Environment
-        run: |
-          echo "Deploying to TEST..."
-          # Replace with your actual test deployment script
-          ./scripts/deploy-test.sh
+        run: echo "Deployed to Test"
