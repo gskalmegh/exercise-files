@@ -1,6 +1,10 @@
 name: cicd
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+      - demo
 
 jobs:
   build:
@@ -17,3 +21,8 @@ jobs:
         echo test, and deploy your project.
     - name: Run a sonar scan
       run: echo Hello, Sonar world!
+    - name: Deploy to dev
+      run: echo Hello, deployed in dev!
+    - name: Trigger Automation tests
+      run: echo automation tests triggered!
+
