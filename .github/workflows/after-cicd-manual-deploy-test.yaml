@@ -2,10 +2,15 @@ name: Manual Test Environment Deployment
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment (dev, test, prod)'
+        required: true
+        default: 'test'  
 
 jobs:
   deploy-test:
-    name: Deploy to Test Environment
+    name: Deploy to ${{ github.event.inputs.environment }} environment
     runs-on: ubuntu-latest
 
     steps:
@@ -19,5 +24,5 @@ jobs:
       - name: Build Spring Boot App
         run: echo "Gradle build"
 
-      - name: Deploy to Test Environment
-        run: echo "Deployed to Test"
+      - name: Deploy to ${{ github.event.inputs.environment }} Environment
+        run: echo "Deployed to ${{ github.event.inputs.environment }}"
